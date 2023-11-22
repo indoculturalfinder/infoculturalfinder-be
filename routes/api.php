@@ -24,3 +24,10 @@ Route::get('categories/{id}', [CategoriesController::class, 'show']);
 Route::post('categories', [CategoriesController::class, 'store']);
 Route::put('categories/{id}', [CategoriesController::class, 'update']);
 Route::delete('categories/{id}', [CategoriesController::class, 'destroy']);
+
+// Provinces
+Route::get('provinces', [ProvincesController::class, 'index']);
+Route::get('provinces/{id}', [ProvincesController::class, 'show']);
+Route::post('provinces', [ProvincesController::class, 'store']);
+Route::put('provinces/{id}', [ProvincesController::class, 'update']);
+Route::delete('provinces/{id}', [ProvincesController::class, 'destroy']);
