@@ -39,3 +39,9 @@ Route::get('cultures/search/{name}', [CulturesController::class, 'searchByProvin
 Route::post('cultures', [CulturesController::class, 'store']);
 Route::put('cultures/{id}', [CulturesController::class, 'update']);
 Route::delete('cultures/{id}', [CulturesController::class, 'destroy']);
+
+// Tarian
+Route::get('tarian', [Tarian::class, 'index']);
+Route::get('tarian/{id}', [Tarian::class, 'show']);
+Route::get('tarian/search/name/{name}', [Tarian::class, 'searchByName']);
+Route::get('tarian/search/province/{name}', [Tarian::class, 'searchByProvince']);
