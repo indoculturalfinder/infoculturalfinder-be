@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Api;
 use App\Models\Province;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Validator;
 
 class ProvincesController extends Controller
 {
@@ -27,7 +28,29 @@ class ProvincesController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $dataProvinces = new Province;
+
+        $rules = [
+            'name' => 'required'
+        ];
+
+        $validator = Validator::make($request->all(), $rules);
+        if ($validator->fails()) {
+            return response()->json([
+                'status'=>false,
+                'massage'=>'Gagal memasukkan data',
+                'data'=>$validator->errors()
+            ], 400);
+        }
+
+        $dataProvinces->name = $request->name;
+
+        $dataProvinces->save();
+
+        return response()->json([
+            'status' => true,
+            'message' => 'Sukses memasukan data'
+        ],201);
     }
 
     /**
@@ -56,7 +79,36 @@ class ProvincesController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        $dataProvinces = Province::find($id);
+
+        if (empty($dataProvinces)) {
+            return response()->json([
+                'status' => false,
+                'message' => 'Data tidak ditemukan'
+            ], 404);
+        }
+
+        $rules = [
+            'name' => 'required'
+        ];
+
+        $validator = Validator::make($request->all(), $rules);
+        if ($validator->fails()) {
+            return response()->json([
+                'status'=>false,
+                'massage'=>'Gagal update data',
+                'data'=>$validator->errors()
+            ], 400);
+        }
+
+        $dataProvinces->name = $request->name;
+
+        $post = $dataProvinces->save();
+
+        return response()->json([
+            'status' => true,
+            'message' => 'Sukses update data'
+        ],201);
     }
 
     /**
