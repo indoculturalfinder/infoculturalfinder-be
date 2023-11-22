@@ -6,7 +6,7 @@ use App\Models\Culture;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
-class TarianController extends Controller
+class Tarian extends Controller
 {
     /**
      * Display a listing of the resource.
