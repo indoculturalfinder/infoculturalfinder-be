@@ -116,6 +116,20 @@ class ProvincesController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        $dataProvinces = Province::find($id);
+
+        if (empty($dataProvinces)) {
+            return response()->json([
+                'status' => false,
+                'message'=> 'Data tidak ditemukan',
+            ], 404);
+        }
+
+        $post = $dataProvinces->delete();
+
+        return response()->json([
+            'status'=> true,
+            'message' => 'Sukses delete data'
+        ], 200);
     }
 }
