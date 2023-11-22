@@ -55,3 +55,9 @@ Route::get('upacara-adat', [UpacaraAdatController::class, 'index']);
 Route::get('upacara-adat/{id}', [UpacaraAdatController::class, 'show']);
 Route::get('upacara-adat/search/name/{name}', [UpacaraAdatController::class, 'searchByName']);
 Route::get('upacara-adat/search/province/{name}', [UpacaraAdatController::class, 'searchByProvince']);
+
+// Rumah Adat
+Route::get('rumah-adat', [RumahAdatController::class, 'index']);
+Route::get('rumah-adat/{id}', [RumahAdatController::class, 'show']);
+Route::get('rumah-adat/search/name/{name}', [RumahAdatController::class, 'searchByName']);
+Route::get('rumah-adat/search/province/{name}', [RumahAdatController::class, 'searchByProvince']);
