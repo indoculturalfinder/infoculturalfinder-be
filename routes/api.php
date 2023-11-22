@@ -61,3 +61,9 @@ Route::get('rumah-adat', [RumahAdatController::class, 'index']);
 Route::get('rumah-adat/{id}', [RumahAdatController::class, 'show']);
 Route::get('rumah-adat/search/name/{name}', [RumahAdatController::class, 'searchByName']);
 Route::get('rumah-adat/search/province/{name}', [RumahAdatController::class, 'searchByProvince']);
+
+// Makanan Khas
+Route::get('makanan-khas', [MakananKhasController::class, 'index']);
+Route::get('makanan-khas/{id}', [MakananKhasController::class, 'show']);
+Route::get('makanan-khas/search/name/{name}', [MakananKhasController::class, 'searchByName']);
+Route::get('makanan-khas/search/province/{name}', [MakananKhasController::class, 'searchByProvince']);
