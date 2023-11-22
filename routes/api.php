@@ -49,3 +49,9 @@ Route::get('tarian', [Tarian::class, 'index']);
 Route::get('tarian/{id}', [Tarian::class, 'show']);
 Route::get('tarian/search/name/{name}', [Tarian::class, 'searchByName']);
 Route::get('tarian/search/province/{name}', [Tarian::class, 'searchByProvince']);
+
+// Upacara Adat
+Route::get('upacara-adat', [UpacaraAdatController::class, 'index']);
+Route::get('upacara-adat/{id}', [UpacaraAdatController::class, 'show']);
+Route::get('upacara-adat/search/name/{name}', [UpacaraAdatController::class, 'searchByName']);
+Route::get('upacara-adat/search/province/{name}', [UpacaraAdatController::class, 'searchByProvince']);
