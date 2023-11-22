@@ -3,9 +3,13 @@
 use Illuminate\Http\Request;
 use App\Http\Controllers\Api\Tarian;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Api\BajuAdatController;
 use App\Http\Controllers\Api\CulturesController;
 use App\Http\Controllers\Api\ProvincesController;
+use App\Http\Controllers\Api\RumahAdatController;
 use App\Http\Controllers\Api\CategoriesController;
+use App\Http\Controllers\Api\MakananKhasController;
+use App\Http\Controllers\Api\UpacaraAdatController;
 
 /*
 |--------------------------------------------------------------------------
