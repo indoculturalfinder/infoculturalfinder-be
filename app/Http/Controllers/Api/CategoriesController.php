@@ -124,6 +124,20 @@ class CategoriesController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        $dataCategories = Categorie::find($id);
+
+        if (empty($dataCategories)) {
+            return response()->json([
+                'status' => false,
+                'message'=> 'Data tidak ditemukan',
+            ], 404);
+        }
+
+        $dataCategories->delete();
+
+        return response()->json([
+            'status'=> true,
+            'message' => 'Sukses delete data'
+        ], 200);
     }
 }
