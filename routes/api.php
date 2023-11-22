@@ -31,3 +31,11 @@ Route::get('provinces/{id}', [ProvincesController::class, 'show']);
 Route::post('provinces', [ProvincesController::class, 'store']);
 Route::put('provinces/{id}', [ProvincesController::class, 'update']);
 Route::delete('provinces/{id}', [ProvincesController::class, 'destroy']);
+
+// Cultures
+Route::get('cultures', [CulturesController::class, 'index']);
+Route::get('cultures/{id}', [CulturesController::class, 'show']);
+Route::get('cultures/search/{name}', [CulturesController::class, 'searchByProvince']);
+Route::post('cultures', [CulturesController::class, 'store']);
+Route::put('cultures/{id}', [CulturesController::class, 'update']);
+Route::delete('cultures/{id}', [CulturesController::class, 'destroy']);
