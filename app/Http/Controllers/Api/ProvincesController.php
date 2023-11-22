@@ -2,8 +2,9 @@
 
 namespace App\Http\Controllers\Api;
 
-use App\Http\Controllers\Controller;
+use App\Models\Province;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 
 class ProvincesController extends Controller
 {
@@ -12,7 +13,13 @@ class ProvincesController extends Controller
      */
     public function index()
     {
-        //
+        $data = Province::select('id', 'name')->orderBy('id', 'asc')->get();
+
+        return response()->json([
+            'status' => true,
+            'message' => 'Data ditemukan',
+            'Categories' => $data
+        ], 200);
     }
 
     /**
@@ -28,7 +35,20 @@ class ProvincesController extends Controller
      */
     public function show(string $id)
     {
-        //
+        $data = Province::select('id', 'name')->find($id);
+        if ($data) {
+            return response()->json([
+                'status'=>true,
+                'message'=>'Data Ditemukan',
+                'provinces'=>$data,
+            ], 200);
+        }else{
+            return response()->json([
+                'status' => false,
+                'message' => 'Data tidak ditemukan',
+                'provinces' => $data
+            ], 404);
+        }
     }
 
     /**
