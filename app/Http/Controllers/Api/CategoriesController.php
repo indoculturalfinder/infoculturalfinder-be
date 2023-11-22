@@ -2,8 +2,9 @@
 
 namespace App\Http\Controllers\Api;
 
-use App\Http\Controllers\Controller;
+use App\Models\Categorie;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 
 class CategoriesController extends Controller
 {
@@ -12,7 +13,13 @@ class CategoriesController extends Controller
      */
     public function index()
     {
-        //
+        $data = Categorie::select('id', 'name', 'img', 'desc')->orderBy('id', 'asc')->get();
+
+        return response()->json([
+            'status' => true,
+            'message' => 'Data ditemukan',
+            'Categories' => $data
+        ], 200);
     }
 
     /**
@@ -28,7 +35,20 @@ class CategoriesController extends Controller
      */
     public function show(string $id)
     {
-        //
+        $data = Categorie::select('id', 'name')->find($id);
+        if ($data) {
+            return response()->json([
+                'status'=>true,
+                'message'=>'Data Ditemukan',
+                'categories'=>$data,
+            ], 200);
+        }else{
+            return response()->json([
+                'status' => false,
+                'message' => 'Data tidak ditemukan',
+                'categories' => $data
+            ], 404);
+        }
     }
 
     /**
