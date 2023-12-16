@@ -16,18 +16,18 @@ IndoCulturalFinder BackEnd (indoculturalfinder-be) merupakan proyek untuk penyim
 
 - [indoculturalfinder-be](https://be.indoculturalfinder.my.id/)
 
-## Teknologi
+### Teknologi
 
 - [PHP](https://www.php.net/): Menggunakan bahasa pemrograman Hypertext Preprocessor.
 - [Composer](https://getcomposer.org/): 
 Composer berperan dalam mengeksekusi skrip, memasang file PHP, dan menginstal perpustakaan yang diperlukan sesuai dengan kerangka kerja yang dibuat menggunakan PHP.
 
-## Cara menjalankan proyek jika di lokal
+### Cara menjalankan proyek jika di lokal
 
 ```
 php artisan serve
 ```
 
-## License
+### License
 
 The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
